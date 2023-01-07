@@ -1,0 +1,140 @@
+.completeHeader
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  img
+    width: 100%
+    height: 100%
+
+.navbar
+  position: relative
+  font-size: 20px
+
+.navbar-brand
+  img
+    width: 0px
+    height: 0px
+
+.nav-link
+  top: 0
+  --color: black
+  --color2: #FDC20F
+  padding: 0.8em 1.75em
+  background-color: transparent
+  border-radius: 10px
+  transition: .5s
+  position: relative
+  overflow: hidden
+  cursor: pointer
+  z-index: 1
+  font-weight: bolder
+  font-size: 17px
+  font-family: 'Josefin Sans', sans-serif
+  text-transform: uppercase
+  color: var(--color)
+
+.nav-link::after,
+  .nav-link::before
+    content: ''
+    display: block
+    height: 100%
+    width: 100%
+    transform: skew(90deg) translate(-50%, -50%)
+    position: absolute
+    inset: 50%
+    left: 50%
+    z-index: -1
+    transition: .5s ease-in-out
+    background-color: var(--color)
+
+.nav-link::before
+    top: -50%
+    left: -50%
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%)
+.nav-link
+  &:hover::before
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%)
+
+.nav-link
+  &:hover::after
+      transform: skew(45deg) translate(-50%, -50%)
+
+.nav-link
+  &:hover
+    color: var(--color2)
+.nav-link
+  &:active
+    filter: brightness(.7)
+    transform: scale(.98)
+
+
+.logo-desktop
+  position: absolute
+  width: 120px
+  height: 120px
+  margin: 10px 10px
+  right: 0
+  top: 0px
+
+.navbar-toggler
+  &:focus
+    background-color: #fdc10fd7
+
+
+
+
+
+@media screen and (min-width: 800px)
+  .completeHeader
+    img
+      height: 175px
+
+
+@media screen and (max-width: 800px)
+
+  .completeHeader
+    img
+      height: 110px
+
+  .navbar-collapse
+    background: #fdc10fd7
+    border-radius: 10px
+    text-align: center
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+
+  .navbar
+    display: flex
+    .navbar-brand
+    img
+      width: 80px
+      height: 80px
+      margin: 10px 0
+      font-weight: bolder
+  .navbar-toggler-icon
+    height: 25px
+    width: 25px
+    font-weight: bolder
+  .navbar-toggler
+    margin-top: 10px
+    padding: 0 5px
+    border: .3px solid black
+    align-self:  flex-start
+    z-index: 2
+  .logo-desktop
+    width: 0px
+    height: 0px
+
+@media screen and (max-width: 400px)
+  .completeHeader
+    img
+      height: 85px
+  .navbar
+    .navbar-brand
+    img
+      width: 60px
+      height: 60px
+      margin: 2px 0
